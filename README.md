@@ -1,2 +1,2 @@
-# urdf-path-fixer
-Converts URDF path from package to absolute
+# onshape2webots
+Converts an onshape model for use in webots
