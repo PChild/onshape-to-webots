@@ -1,6 +1,7 @@
 import json
 import os
 import subprocess
+import urdf2webots.importer as importer
 from urdf_path_fixer import fix_urdf_path
 from urllib.parse import urlparse
 
@@ -69,5 +70,7 @@ if __name__ == '__main__':
     # Run onshape-to-robot on the generated folder and config, this seems bad, consider refactor...
     log = subprocess.getoutput('python invoke_onshape_to_robot.py ' + assembly)
     print(log)
+    urdf_name = assembly + '/robot.urdf'
     print('Switching URDF mesh paths to aboslute...')
-    fix_urdf_path(assembly + '/robot.urdf')
+    fix_urdf_path(urdf_name)
+    importer.convert2urdf(urdf_name, assembly + '.proto')
