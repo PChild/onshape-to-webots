@@ -66,7 +66,7 @@ if __name__ == '__main__':
                    'onshape_access_key': api_data['onshape_access_key'],
                    'onshape_secret_key': api_data['onshape_secret_key']}, tmp_config)
     tmp_config.close()
-    print('Running onshape-to-robot... \n\n')
+    print('Converting OnShape model to URDF... \n')
 
     python_string = 'python' if which('python') is not None else 'python3'
 
@@ -74,6 +74,7 @@ if __name__ == '__main__':
     log = subprocess.getoutput(python_string + ' invoke_onshape_to_robot.py ' + assembly)
     print(log)
     urdf_name = assembly + '/robot.urdf'
-    print('Switching URDF mesh paths to aboslute...')
+    print('Switching URDF mesh paths to aboslute...\n')
     fix_urdf_path(urdf_name)
-    importer.convert2urdf(urdf_name, assembly + '.proto')
+    print('Converting URDF to PROTO...\n')
+    importer.convert2urdf(urdf_name, assembly + '/' + assembly + '.proto')
