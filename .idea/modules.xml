@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/onshape-to-webots.iml" filepath="$PROJECT_DIR$/.idea/onshape-to-webots.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/onshape2webots.iml" filepath="$PROJECT_DIR$/.idea/onshape2webots.iml" />
     </modules>
   </component>
 </project>
