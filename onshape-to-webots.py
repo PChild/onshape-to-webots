@@ -1,5 +1,6 @@
 import json
 import os
+from shutil import which
 import subprocess
 import urdf2webots.importer as importer
 from urdf_path_fixer import fix_urdf_path
@@ -67,8 +68,10 @@ if __name__ == '__main__':
     tmp_config.close()
     print('Running onshape-to-robot... \n\n')
 
+    python_string = 'python' if which('python') is not None else 'python3'
+
     # Run onshape-to-robot on the generated folder and config, this seems bad, consider refactor...
-    log = subprocess.getoutput('python invoke_onshape_to_robot.py ' + assembly)
+    log = subprocess.getoutput(python_string + ' invoke_onshape_to_robot.py ' + assembly)
     print(log)
     urdf_name = assembly + '/robot.urdf'
     print('Switching URDF mesh paths to aboslute...')
