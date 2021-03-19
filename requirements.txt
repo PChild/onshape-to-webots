@@ -12,7 +12,7 @@ lark-parser==0.7.8
 msgpack==1.0.0
 numpy==1.19.0
 numpy-stl==2.11.2
-Pillow==7.2.0
+Pillow==8.1.1
 pybullet==2.8.4
 pycollada==0.7.1
 pyparsing==2.4.7
