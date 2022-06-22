@@ -10,7 +10,7 @@ docutils==0.16
 idna==2.10
 lark-parser==0.7.8
 msgpack==1.0.0
-numpy==1.19.0
+numpy==1.22.0
 numpy-stl==2.11.2
 Pillow==7.2.0
 pybullet==2.8.4
